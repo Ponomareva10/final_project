@@ -1,0 +1,42 @@
+.bg {
+    max-width: 100%;
+    height: 542px;
+    background-image: url('../../image/bg-rev-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .bg__text {
+        max-width: 40%;
+        height: max-content;
+        position: relative;
+        left: 45px;
+        top: 100px;
+        margin: 0;
+        text-align: center;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 31px;
+        letter-spacing: 0.015em;
+        color: #000000;
+    }
+
+    .btn {
+        margin-top: 150px;
+    }
+}
+
+@media (min-width: 650px) and (max-width: 760px) {
+    .bg {
+        .bg__text{
+            left: 20px;
+            top: 50px;
+        }
+    }
+}
+
+@media (max-width: 649px){
+    .bg {
+        display: none;
+    }
+}

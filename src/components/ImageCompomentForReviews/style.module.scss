@@ -1,0 +1,49 @@
+.imgCmponentRev {
+    width: 100%;
+    height: 300px;
+    background-image: url('../../image/review_header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: end;
+    text-align: center;
+
+    .title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 29px;
+        color: #fff;
+        padding: 80px 66px 20px 66px;
+        margin-bottom: 0;
+    }
+
+    .text {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 40px;
+        letter-spacing: 0.015em;
+        color: #fff;
+        padding: 0 66px;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 760px) {
+    .imgCmponentRev {
+        height: 380px;
+
+        .title {
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 39px;
+            padding: 130px 10px 0 10px;
+        }
+
+        .text {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            padding: 40px 10px 0 10px;
+        }
+    }
+}

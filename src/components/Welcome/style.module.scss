@@ -1,0 +1,68 @@
+.welcome {
+    width: 100%;
+    height: 678px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-image: url('../../image/header-image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+    
+    .welcome__apacity {
+        width: 100%;
+        height: 478px;
+        position: absolute;
+        background-image: url('../../image/bground.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1;
+        padding-bottom: 50px;
+    }
+
+    .welcome__title {
+        width: 500px;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 59px;
+        color: #FFFFFF;
+        margin-left: 45px;
+    }
+
+    .welcome__text {
+        width: 500px;
+        height: max-content;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 0.015em;
+        color: #FFFFFF;
+        margin-left: 45px;
+    }
+
+    .welcome__btn {
+        margin: 45px;
+    }
+}
+
+@media (max-width: 760px) {
+    .welcome {
+        align-items: center;
+
+        .welcome__title {
+            max-width: 300px;
+            margin-left: 10px;
+            text-align: center;
+        }
+
+        .welcome__text {
+            max-width: 300px;
+            margin-left: 10px;
+        }
+
+        .welcome__btn {
+            margin: 20px;
+        }
+    }
+}

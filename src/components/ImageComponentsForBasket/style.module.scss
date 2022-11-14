@@ -1,0 +1,38 @@
+.imgComponent {
+    width: 100%;
+    height: 300px;
+    background-image: url('../../image/basket_header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: end;
+    text-align: center;
+
+    .title {
+        width: 100%;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 29px;
+        color: #fff;
+        padding: 150px 66px 50px 66px;
+    }
+
+    .text {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 40px;
+        letter-spacing: 0.015em;
+        color: #fff;
+        padding: 0 66px;
+        margin-bottom: 0;
+    }
+}
+
+@media ( max-width: 760px) {
+    .imgComponent {
+        height: 380px;
+
+        .title {
+            padding: 190px 10px 0 10px;
+        }
+    }
+}

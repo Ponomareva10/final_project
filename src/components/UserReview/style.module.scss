@@ -1,0 +1,33 @@
+.reviews__card {
+    width: 300px;
+    height: 434px;
+    background: #FFFFFF;
+    border-radius: 14px;
+
+    .card__img {
+        width: 300px;
+        height: 270px;
+        background-image: url('../../image/reviews-image.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .card__text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #171717;
+        margin: 20px 10px;
+    }
+
+    .card__autor {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: right;
+        text-transform: uppercase;
+        color: #171717;
+        margin: 10px;
+    }
+}

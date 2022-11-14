@@ -1,0 +1,36 @@
+.form {
+    max-width: 100%;
+    height: max-content;
+    background-image: url('../../image/bg-whiteblack.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center ;
+    background-position-y: 0;
+    padding: 24px 45px 60px 45px;
+    color: teal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form__title {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 38px;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .form__text {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        margin: 40px 0 20px 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .form {
+        padding: 10px 10px 40px 10px;
+    }
+}

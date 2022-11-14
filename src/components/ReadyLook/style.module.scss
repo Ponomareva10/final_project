@@ -1,0 +1,32 @@
+.look {
+    width: 100%;
+    min-height: calc(100vh - 213px);
+    padding: 24px 45px 60px 45px;
+    text-align: center;
+
+    .look__title {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 38px;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .look__text {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        margin: 40px 0 20px 0;
+    }
+
+    .look__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 30px;
+        text-align: initial;
+    }
+}
