@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MyButton from '../../UI/button/MyButton';
+import FliperSlide from '../FliperSlide/FliperSlide';
 import s from './style.module.scss'
 
 const IsWork = () => {
@@ -10,7 +12,9 @@ const IsWork = () => {
                 <div className={s.cards__item}>
                     <h4 className={s.item__nomber}>1</h4>
                     <p className={s.item__text}>Уou can see our products</p>
-                    <div className={s.card__img1}></div>
+                    <div className={s.card__img1}>
+                    <FliperSlide />
+                    </div>
                 </div>  
                 <div className={s.cards__item}>
                     <h4 className={s.item__nomber}>2</h4>
@@ -45,7 +49,9 @@ const IsWork = () => {
                 </div>  
             </div>
             <div className={s.btn}>
-                <MyButton>LETS GET STYLING</MyButton>
+                <Link to='/question'>
+                    <MyButton>LETS GET STYLING</MyButton>
+                </Link>
             </div>
         </section>
     );

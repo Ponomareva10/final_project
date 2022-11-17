@@ -1,29 +1,32 @@
 import React from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import MyButton from '../../UI/button/MyButton';
+import QuestionGender from '../QuestionGender/QuestionGender';
+import QuestionSeason from '../QuestionSeason/QuestionSeason';
+import QuestionStyle from '../QuestionStyle/QuestionStyle';
 import s from './style.module.scss';
 
-const Styling = () => {
+const Styling = () => { 
+    const [obj, setObj] = useState({
+        questionStyle: '',
+        questionGender: '',
+        questionSeason: '',
+    })
     return (
     <div className={s.styling}>
         <h2 className={s.styling__title}>LETS GET STYLING</h2>
         <h3 className={s.styling__question}>What clothes are you interested in?</h3>
-        <div className={s.styling__btn}>
-            <MyButton>MALE</MyButton>
-            <MyButton>FEMALE</MyButton>
-        </div>
+        <QuestionGender setState={setObj} state={obj} />
         <h3 className={s.styling__question}>What season clothes?</h3>
-        <div className={s.styling__btn}>
-            <MyButton>SUMMER</MyButton>
-            <MyButton>DEMI-SEASONE</MyButton>
-            <MyButton>WINTER</MyButton>
-        </div>
+        <QuestionSeason setState={setObj} state={obj} />
         <h3 className={s.styling__question}>What style do you need?</h3>
-        <div className={s.styling__btn}>
-            <MyButton>BUSSINESS</MyButton>
-            <MyButton>SPORT</MyButton>
-            <MyButton>CASUAL</MyButton>
-        </div>
-        <MyButton>Get a trendy Look</MyButton>
+        <QuestionStyle setState={setObj} state={obj} />
+        <Link to='/readylook'>
+            <MyButton
+                onClick={() => console.log(obj)}
+            >Get a trendy Look</MyButton>
+        </Link>
     </div>
 );
 };

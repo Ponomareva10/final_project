@@ -1,0 +1,48 @@
+.forReady {
+    width: 100%;
+    height: 300px;
+    background-image: url('../../image/ready_header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: end;
+    text-align: center;
+
+    .forReady__title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 29px;
+        color: #fff;
+        padding: 180px 66px 20px 66px;
+        margin-bottom: 0;
+    }
+
+    .forReady__text {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 40px;
+        letter-spacing: 0.015em;
+        color: #fff;
+        padding: 0 66px;
+        margin-bottom: 0;
+    }
+}
+
+@media ( max-width: 750px) {
+    .forReady {
+        height: 380px;
+
+        .forReady__title {
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 39px;
+            padding: 230px 10px 0 10px;
+        }
+
+        .forReady__text {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            padding: 30px 10px 0 10px;
+        }
+    }
+}

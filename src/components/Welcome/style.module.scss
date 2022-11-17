@@ -28,6 +28,7 @@
         line-height: 59px;
         color: #FFFFFF;
         margin-left: 45px;
+        z-index: 2;
     }
 
     .welcome__text {
@@ -39,14 +40,16 @@
         letter-spacing: 0.015em;
         color: #FFFFFF;
         margin-left: 45px;
+        z-index: 2;
     }
 
     .welcome__btn {
         margin: 45px;
+        z-index: 2;
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 750px) {
     .welcome {
         align-items: center;
 

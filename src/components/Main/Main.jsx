@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MyButton from '../../UI/button/MyButton';
 import s from './style.module.scss'
 
@@ -14,7 +15,9 @@ const Main = () => {
                     so let's get started and match you with
                     one of our amazing personal stylists!
                 </p>
-                <MyButton>LETS GET STYLING</MyButton>
+                <Link to='/question'>
+                    <MyButton>LETS GET STYLING</MyButton>
+                </Link>
             </div>
             </div>
         </main>

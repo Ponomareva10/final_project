@@ -1,0 +1,13 @@
+.styling__btn {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 750px) {
+    .styling__btn {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}

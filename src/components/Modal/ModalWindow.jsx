@@ -1,13 +1,12 @@
 import React, { useState } from "react";
+import close from "../../image/x.svg";
 // import { useDispatch, useSelector } from "react-redux";
 
 const Modal = ({ setModalActive }) => {
   //   const dispatch = useDispatch();
   //   const selector = useSelector((state) => state.card);
   const [cardInfo, setCardInfo] = useState({
-    name: "",
-    description: "",
-    date: "",
+    feedback: "",
   });
 
   return (
@@ -22,13 +21,13 @@ const Modal = ({ setModalActive }) => {
               setModalActive(false);
             }}
           >
-            X
+            <img className="icon__close" src={close} alt='close' />
           </p>
-          <h2 className="title_modal">Please write a review</h2>
+          <h2 className="title_modal">Please write a feedback</h2>
           <textarea
             type="text"
             className="textarea"
-            onChange={(e) => setCardInfo({ ...cardInfo, name: e.target.value })}
+            onChange={(e) => setCardInfo({ ...cardInfo, feedback: e.target.value })}
           ></textarea>
           <button
             className="btn_modal"
@@ -41,7 +40,7 @@ const Modal = ({ setModalActive }) => {
             //     setActive(false);
             //   }}
           >
-            Post a review
+            Post a feedback
           </button>
         </div>
       </div>

@@ -1,0 +1,32 @@
+.nav {
+    width: max-content;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .nav__item {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 0.015em;
+        color: #3A3A3A;
+        text-decoration: none;
+    }
+
+    .nav__item:hover {
+        text-decoration: underline;
+    }
+
+    .nav__item:focus {
+        color:teal;
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 750px) {
+    .nav {
+        display: none;
+    }
+}

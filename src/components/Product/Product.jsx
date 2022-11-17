@@ -14,7 +14,7 @@ const Product = ({card}) => {
             </div>
             <div className={s.card__info}>
                 <h2 className={s.info__title}>fgkfghgof</h2>
-                <p className={s.info__description}></p>
+                <p className={s.info__description}>gfhfbhg</p>
                 <div className={s.info__price}>200$
                     <div className={s.info__icon}>
                         {location.pathname !== '/basket' 

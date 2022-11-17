@@ -14,12 +14,15 @@
         color: #000;
 
         .arrow {
+            width: 26px;
+            height: 24px;
+            object-fit: contain;
             margin-right: 32px;
         }
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 750px) {
     .header {
         justify-content: space-between;
         padding: 0 10px;
