@@ -5,6 +5,7 @@ import ListExample from '../Navigation/Navigation';
 import MyButton from '../../UI/button/MyButton';
 import s from './style.module.scss';
 import CastomNav from '../CastomNav/CastomNav';
+import { isAuth } from '../../pages/MainPage';
 
 const Header = () => {
     const location = useLocation();

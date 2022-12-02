@@ -2,8 +2,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios';
 
 const initialState ={
-    basket: [],
+    basket: [
+        {price: 200},
+        {price: 200},
+        {price: 200},
+    ],
     louder: false,
+    total: 0,
 }
 
 export const GetBasketFunc = createAsyncThunk(
@@ -33,26 +38,31 @@ export const DeleteBasketProductFunc = createAsyncThunk(
 const basketSlice = createSlice({
     name: 'basketProducts',
     initialState,
-    reduser: {
+    reducers: {
         getBasketProducts: (state, action) => {
-            state.basket = action.payload
+            state.basket = action.payload;
         },
         postAddedToBasket: (state, action) => {
             state.basket = action.payload
         },
         deleteBasketProduct: (state, action) => {
             state.basket = action.payload
+        },
+        totalSumPrice: (state, action) => {
+            console.log(action)
+            state.total = action.payload;
+
         }
     },
-    extraReducers: { 
-        [GetProductFunc.pending]: (state) => {
-        state.louder = true
-        },
-        [GetProductFunc.fulfilled]: (state) => {
-            state.louder = false
-        }
-    }
+    // extraReducers: { 
+    //     [getBasketProducts.pending]: (state) => {
+    //     state.louder = true
+    //     },
+    //     [getBasketProducts.fulfilled]: (state) => {
+    //         state.louder = false
+    //     }
+    // }
 })
 
-export const {getBasketProducts, postAddedToBasket, deleteBasketProduct} = basketSlice.actions;
+export const {getBasketProducts, postAddedToBasket, deleteBasketProduct, totalSumPrice} = basketSlice.actions;
 export default basketSlice.reducer;

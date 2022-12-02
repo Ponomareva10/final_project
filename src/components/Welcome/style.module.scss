@@ -9,10 +9,11 @@
     background-repeat: no-repeat;
     background-position: center;
     z-index: 2;
+    background-attachment: fixed;
     
     .welcome__apacity {
         width: 100%;
-        height: 478px;
+        height: 678px;
         position: absolute;
         background-image: url('../../image/bground.png');
         background-repeat: no-repeat;

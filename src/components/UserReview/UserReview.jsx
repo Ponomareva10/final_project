@@ -1,19 +1,21 @@
 import React from 'react';
 import s from './style.module.scss';
+import photo from '../../image/user_icon.svg';
 
-const UserReview = () => {
+const UserReview = ({review}) => {
     return (
         <div className={s.reviews__card}>
-        <div className={s.card__img}></div>
+        <div className={s.card__img}>
+          <img src={photo} alt="autor" className={s.img__autor} />
+        </div>
         <p className={s.card__text}>
-          My stylist just “gets me” even though we've never met. She puts
-          together looks that accentuate my best features. She really
-          listens to me and has helped me dress for so many dates and job
-          interviews.
+          {review.comment}
         </p>
         <div className={s.card__autor}>
-          You name
-          <span className={s.date}>23 iun</span>
+          {review.user}
+          <span className={s.date}>
+            {review.created_at}
+          </span>
         </div>
       </div>
     );

@@ -1,7 +1,10 @@
 .rev {
     width: 100%;
     min-height: calc(100vh - 213px);
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     padding: 50px 66px;
 }
 

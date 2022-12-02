@@ -1,39 +1,26 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid, Pagination } from "swiper";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import s from './style.module.scss';
 import UserReview from '../UserReview/UserReview';
+import Spinner from 'react-bootstrap/Spinner';
+import {GetReviewsFunc} from '../../store/slices/reviewsPost';
 
 const Reviews2 = () => {
+  const dispatch = useDispatch();
+  const {reviews, louder} = useSelector((state) => state.reviewsSlice);
+
+  useEffect(() => {
+    dispatch(GetReviewsFunc())
+  }, []);
+
     return (
         <section className={s.rev}>
-
-            <Swiper
-        slidesPerView={3}
-        grid={{
-          rows: 2,
-        }}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Grid, Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <UserReview />
-        </SwiperSlide>
-        <SwiperSlide>
-          <UserReview />
-        </SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
+          {
+          louder ? <Spinner animation="grow" />
+          : reviews.map((review) => (
+            <UserReview key={review.id} review={review} />
+            ))
+        }
         </section>
     );
 };

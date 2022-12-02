@@ -1,11 +1,12 @@
 import React from 'react';
 import s from './style.module.scss';
-import imageCard from '../../image/bag2.png';
+// import imageCard from '../../image/bag2.png';
 
-const ImageItem = () => {
+const ImageItem = ({item}) => {
+
     return (
         <div className={s.image}>
-            <img className={s.image__picture} src={imageCard} alt='product' />
+            <img className={s.image__picture} src={item.picture} alt='product' />
         </div>
     );
 };

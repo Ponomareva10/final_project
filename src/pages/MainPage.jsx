@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import { Redirect } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Main from '../components/Main/Main';
@@ -9,6 +9,9 @@ import Welcome from '../components/Welcome/Welcome';
 import SecondWelcome from '../components/SecondWelcome/SecondWelcome';
 
 const MainPage = () => {
+    // useEffect(() => {
+    //     localStorage.clear()
+    // }, [])
     return (
         <div>
             {/* <Redirect to="/auth"/> */}
@@ -24,3 +27,12 @@ const MainPage = () => {
 };
 
 export default MainPage;
+
+export const isAuth = (link) => {
+    const storage = localStorage.getItem('token');
+    if (storage) {
+        return link;
+    } else {
+        return '/auth'
+    }
+}

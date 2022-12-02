@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import close from "../../image/x.svg";
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { PostAddedReviewsFunc } from "../../store/slices/reviewsPost";
 
 const Modal = ({ setModalActive }) => {
-  //   const dispatch = useDispatch();
-  //   const selector = useSelector((state) => state.card);
+
+    const dispatch = useDispatch();
+    // const reviews = useSelector(state => state.reviewsSlice);
+
   const [cardInfo, setCardInfo] = useState({
     feedback: "",
   });
@@ -31,14 +34,11 @@ const Modal = ({ setModalActive }) => {
           ></textarea>
           <button
             className="btn_modal"
-            //   onClick={(e) => {
-            //     e.preventDefault();
-            //     dispatch({
-            //       type: "newGet",
-            //       payload: { ...cardInfo, id: Date.now() },
-            //     });
-            //     setActive(false);
-            //   }}
+              onClick={(e) => {
+                e.preventDefault();
+                dispatch(PostAddedReviewsFunc(cardInfo));
+                setModalActive(false);
+              }}
           >
             Post a feedback
           </button>
