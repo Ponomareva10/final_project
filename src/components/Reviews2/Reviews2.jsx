@@ -10,12 +10,18 @@ const Reviews2 = () => {
   const dispatch = useDispatch();
   const {reviews, louder} = useSelector((state) => state.reviewsSlice);
 
+  const noneArray = () => {
+    if (reviews === []) 
+    return 'no reviews';
+}
+
   useEffect(() => {
     dispatch(GetReviewsFunc())
   }, []);
 
     return (
         <section className={s.rev}>
+          <h3 style={{color: 'red'}} >{noneArray()}</h3>
           {
           louder ? <Spinner animation="grow" />
           : reviews.map((review) => (

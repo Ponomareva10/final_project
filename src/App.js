@@ -17,8 +17,9 @@ import PrivatePage from "./components/Private/Private";
 import OrderPage from "./pages/OrderPage";
 
 function App() {
-  const token = true;
-  // const token = localStorage.getItem("token");
+
+  const token = localStorage.getItem("token");
+
   return (
     <div className="App">
       <Routes>
@@ -74,14 +75,6 @@ function App() {
             </PrivatePage>
           }
         />
-                {/* <Route
-          path="/point_order"
-          element={
-            <PrivatePage isRequired={token} redirectLink="/auth">
-              <OrderPage />
-            </PrivatePage>
-          }
-        /> */}
       </Routes>
     </div>
   );
