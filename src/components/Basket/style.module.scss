@@ -1,8 +1,22 @@
 .basket {
     width: 100%;
     min-height: calc(100vh - 113px);
-    text-align: center;
+    text-align: end;
     padding: 0 66px 30px 66px;
+
+    .btn {
+        width: 180px;
+        height: 40px;
+        background-color: salmon;
+        border-radius: 8px;
+        border: none;
+        box-shadow: 2px 3px teal;
+        margin: 15px;
+    }
+
+    .btn:active {
+        box-shadow: none;
+    }
 
     .basket__wrapper {
         width: 100%;

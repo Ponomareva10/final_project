@@ -4,7 +4,7 @@ import AuthPage from '../../pages/AuthPage';
 
 const PrivatePage = ({children, isRequired, redirectLink}) => {
 
-    if (!isRequired) return <Navigate to={redirectLink} replace={true} />
+    if (!isRequired) return <Navigate to={redirectLink} replace={isRequired} />
 
     return children
 };

@@ -1,8 +1,12 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import close from "../../image/x.svg";
+import Spinner from 'react-bootstrap/esm/Spinner';
 import Product from "../Product/Product";
 
-const ModalLook = ({ setModalLookActive }) => {
+const ModalLook = ({ setModalLookActive, item }) => {
+  const dispatch = useDispatch();
+  const {looksItem, louder} = useSelector(state => state.lookSlice)
 
   return (
     <div  className="modal_activeLook" onClick={() => {
@@ -20,28 +24,20 @@ const ModalLook = ({ setModalLookActive }) => {
           </div>
           <h2 className="title_modal">This is your Look</h2>
           <div className="wrapper__modal">
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
+          {
+            louder ? <Spinner animation='grow' /> : looksItem.map((card) => (<Product key={card.id} card={card} />))
+          }
           </div>
-          {/* <button
+          <button
             className="btn_modal"
-            //   onClick={(e) => {
-            //     e.preventDefault();
-            //     dispatch({
-            //       type: "newGet",
-            //       payload: { ...cardInfo, id: Date.now() },
-            //     });
-            //     setActive(false);
-            //   }}
+              onClick={(e) => {
+                e.preventDefault();
+                dispatch();
+                setModalLookActive(false);
+              }}
           >
             Post a feedback
-          </button> */}
+          </button>
         </div>
       </div>
     </div>

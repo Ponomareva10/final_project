@@ -77,7 +77,7 @@
                         }
     
                         .dress {
-                            background-image: url('../../image/dress.jpg');
+                            background-image: url('../../image/outermost.jfif');
                             background-repeat: no-repeat;
                             background-size: contain;
                             background-position: center;
@@ -96,7 +96,7 @@
                     height: 266px;
                     box-shadow: 0 4px 4px 3px #3A3A3A;
                     border-radius: 2px;
-                    background-image: url('../../image/bag2.png');
+                    background-image: url('../../image/parts.jpg');
                     background-repeat: no-repeat;
                     background-size: contain;
                     background-position: center;
@@ -197,10 +197,14 @@
                         text-align: left;
                     }
                 }
+
+                .card__img {
+                    width: calc(100vw - 160px);
+                }
             }
         }
     }
- }
+}
 
 @media ( max-width: 750px) {
     .work {
@@ -238,6 +242,10 @@
                     .accesories{
                         text-align: left;
                     }
+                }
+
+                .card__img {
+                    width: calc(100vw - 40px);
                 }
             }
         }

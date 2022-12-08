@@ -6,14 +6,12 @@ import s from './style.module.scss';
 
 const SetLookItem = ({look}) => {
     const [modalLookActive, setModalLookActive] = useState(false);
-
+    console.log(look)
     return (
         <div className={s.setLook}> 
-            {
-                look.img(item => (<ImageItem item={item} />))
-            } 
+            <ImageItem item={look} />
             <MyButton onClick={() => setModalLookActive(!modalLookActive)} >See more</MyButton>
-            {modalLookActive && <ModalReadyLook setModalLookActive={setModalLookActive}/>}
+            {modalLookActive && <ModalReadyLook item={look} setModalLookActive={setModalLookActive}/>}
         </div>
     );
 };

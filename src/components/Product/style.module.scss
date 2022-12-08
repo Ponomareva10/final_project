@@ -9,12 +9,12 @@
 
     .card__image {
         width: 100%;
-        height: 200px;
+        height: 180px;
 
         .image {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
         }
     }
 
@@ -24,22 +24,45 @@
         margin-left: 5px;
 
         .info__title {
+            max-width: 100%;
+            height: 20px;
             font-weight: 500;
             font-size: 18px;
             line-height: 20px;
             color:  #171717;
-            overflow: scroll;
+            overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        .info__description,
-        .info__price {
+        .info__title:active {
+            height: max-content;
+        }
+
+        .info__description {
+            max-width: 100%;
+            height: 55px;
             font-weight: 500;
             font-size: 14px;
             line-height: 16px;
             letter-spacing: 0.015em;
             color:  #171717;
-            overflow: scroll;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 12px;
+        }
+
+        .info__description:active {
+            height: max-content;
+        }
+
+        .info__price {
+            max-width: 100%;
+            height: 25px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.015em;
+            color:  #171717;
             margin-bottom: 12px;
 
             .info__icon {
@@ -47,7 +70,7 @@
                 position: absolute;
                 width: 18px;
                 height: 18px;
-                margin-left: 160px;
+                margin-left: 140px;
                 transition: 0.3s;
         
                 .icon {

@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GetBasketFunc, totalSumPrice } from '../../store/slices/basketProduct';
+import { DeleteBasketProductFunc, GetBasketFunc, totalSumPrice } from '../../store/slices/basketProduct';
 import { Link } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import MyButton from '../../UI/button/MyButton';
@@ -9,7 +9,6 @@ import s from './style.module.scss';
 
 const Basket = () => {
     const {basket, louder, total} = useSelector((state) => state.basketSlice);
-    const state = useSelector((state) => state.basketSlice);
     const dispatch = useDispatch();
 
     const totalPrice = useMemo(() => {
@@ -27,6 +26,9 @@ const Basket = () => {
 
     return (
         <div className={s.basket}>
+            <button className={s.btn}
+            onClick={() => dispatch(DeleteBasketProductFunc())}
+            >Clear basket</button>
             <div className={s.basket__wrapper}>
                 {
                     louder ? <Spinner animation="grow" /> : basket.map(( card ) => (<Product key={card.id} card={card} />))

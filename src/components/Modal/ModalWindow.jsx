@@ -6,7 +6,6 @@ import { PostAddedReviewsFunc } from "../../store/slices/reviewsPost";
 const Modal = ({ setModalActive }) => {
 
     const dispatch = useDispatch();
-    // const reviews = useSelector(state => state.reviewsSlice);
 
   const [cardInfo, setCardInfo] = useState({
     feedback: "",

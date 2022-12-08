@@ -21,15 +21,18 @@ const Footer = () => {
                 </Link>
             </div>
             <div className={s.footer__icon}>
-            <a href='https://www.facebook.com/'>
-                <img className={s.icon__item} src={facebook} alt="icon" />
-            </a>
-            <a href='https://www.instagram.com/'>
-                <img className={s.icon__item} src={instagram} alt="icon" />
-            </a>
-            <a href='https://twitter.com/'>
-                <img className={s.icon__item} src={twitter} alt="icon" />
-            </a>
+                <Link  className={s.iconItem} to="/point_order">
+                    <div className={s.item__item}>Point of issue of orders</div>
+                </Link>
+                <a href='https://www.facebook.com/'>
+                    <img className={s.icon__item} src={facebook} alt="icon" />
+                </a>
+                <a href='https://www.instagram.com/'>
+                    <img className={s.icon__item} src={instagram} alt="icon" />
+                </a>
+                <a href='https://twitter.com/'>
+                    <img className={s.icon__item} src={twitter} alt="icon" />
+                </a>
             </div>
         </footer>
     );

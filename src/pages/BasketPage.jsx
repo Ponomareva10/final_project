@@ -16,7 +16,7 @@ const BasketPage = () => {
         <div>
             <Header />
             <ImageCompopnentsForBasket />
-            {isLogin ? <Basket />  : <h1>Вали отсюда</h1>}
+            {isLogin ? <Basket />  : <h1>You are not authorized</h1>}
             <Footer />
         </div>
     );

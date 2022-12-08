@@ -12,7 +12,7 @@ import {GetReviewsFunc} from '../../store/slices/reviewsPost';
 
 const Reviews = () => {
   const dispatch = useDispatch()
-  const {reviews, louder} = useSelector((state) => state.reviewsSlice);
+  const {reviews, louder, error} = useSelector((state) => state.reviewsSlice);
   const [slidersPreview , setSlidersPreview ] = useState(4);
 
   const matchesDesktop = useMediaQuery('(min-width:1400px)');
@@ -41,6 +41,9 @@ const Reviews = () => {
   return (
     <section className={s.wrapper__reviews}>
       <div className={s.reviews__title}>Reviews</div>
+      {
+        error && <h3 style={{color: 'red'}}>You can read the reviews only after authorization</h3>
+      }
       <div className={s.wrapper__cards}>
         <Swiper 
             slidesPerView={slidersPreview} 

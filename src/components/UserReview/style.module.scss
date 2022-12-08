@@ -1,38 +1,43 @@
 .reviews__card {
-    position: relative;
-    width: 300px;
-    height: 434px;
+    width: 270px;
+    height: 306px;
     background: #B5B5B5;
     border-radius: 14px;
     overflow: hidden;
     border: 2px solid #171717;
 
     .card__img {
-        position: absolute;
-        width: 297px;
-        height: 270px;
+        width: 267px;
+        height: 170px;
         border-radius: 14px;
 
         .img__autor {
-            width: 300px;
-            height: 270px;
+            width: 270px;
+            height: 170px;
             object-fit: contain;
         }
     }
 
     .card__text {
-        position: absolute;
+        width: 247px;
+        height: 96px;
         font-weight: 500;
         font-size: 14px;
         line-height: 16px;
         color: #171717;
-        overflow: scroll;
+        overflow: hidden;
+        text-overflow: ellipsis;
         top: 290px;
-        margin: 0 10px;
+        margin: 10px;
+    }
+
+    .card__text:active {
+        height: max-content;
     }
 
     .card__autor {
-        position: absolute;
+        width: 247px;
+        height: 15px;
         font-weight: 600;
         font-size: 12px;
         line-height: 14px;
@@ -42,7 +47,7 @@
         overflow: hidden;
         bottom: 20px;
         right: 10px;
-        margin: 0 10px;
+        margin: 10px;
 
         .date {
             margin-left: 10px;

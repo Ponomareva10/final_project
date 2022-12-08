@@ -1,23 +1,39 @@
 import React,{ useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import s from './style.module.scss';
 import MyButton from '../../UI/button/MyButton';
 import MyInput from '../../UI/input/MyInput';
 import MyPassword from '../../UI/password/MyPassword';
 import MyRepeatPassword from '../../UI/myPassword2/MyRepeatPassword';
-import {PostRegisterFunc} from '../../store/slices/userSlice'
+import {PostRegisterFunc} from '../../store/slices/userSlice';
 
 const RegisUser = () => {
 
     const dispatch = useDispatch();
-    const { error } = useSelector(state => state.userSlice)
+    const { error, isRegistrated} = useSelector(state => state.userSlice);
 
     const [form, setForm] = useState({
-        email: 'beks@gmail.com',
-        password: 'Q1w2##e4r',
-        password2: 'Q1w2##e4r',
+        email: '',
+        password: '',
+        password2: '',
     });
-    console.log(form)
+
+    const errorMessege = () => {
+        if(error.email) return  error.email[0]
+        if (error.password) return  error.password[0]
+        if (error.password2) return  error.password2[0]
+        if (error.detail) return  error.detail
+    }
+
+    const registration = (e) => {
+        e.preventDefault();
+        dispatch(PostRegisterFunc(form));
+    };
+
+    if (isRegistrated) {
+        return <Navigate to="/auth" replace={true} />
+    }
 
     return (
         <section className={s.auth}>
@@ -37,7 +53,6 @@ const RegisUser = () => {
                     value={form.password2}
                     onChange={(e) => setForm({...form, password2: e.target.value})} 
                 />
-                {error && <p>{error}</p>}
                 <label>
                 <div className={s.form__title}>Not necessary :</div>
                 <select className={s.form__select}
@@ -49,14 +64,10 @@ const RegisUser = () => {
                     <option className={s.form__optoion} value="female">female</option>
                 </select>
                 </label>
+                <p style={{color: 'red'}} >{errorMessege()}</p>
                 <br/>
                 <MyButton style={{marginTop: "30px"}}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        dispatch(PostRegisterFunc(form))
-                    }}
-                >
-                    next
+                    onClick={registration}>next
                 </MyButton>
             </form>
         </section>

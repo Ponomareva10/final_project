@@ -6,12 +6,13 @@ import ModalWindow from '../../components/Modal/ModalWindow';
 import SetLookItem from '../../components/SetLookItem/SetLookItem';
 import Spinner from 'react-bootstrap/esm/Spinner';
 import { GetLookFunc } from '../../store/slices/looksSet';
+import Product from '../../components/Product/Product';
 
 const ReadyLook = () => {
     const dispatch = useDispatch();
     const { looks, louder } = useSelector((state) => state.lookSlice);
     const [modalActive, setModalActive] = useState(false);
-
+    console.log(looks)
     useEffect(() => {
         dispatch(GetLookFunc())
     }, []);
@@ -19,8 +20,11 @@ const ReadyLook = () => {
     return (
         <section className={s.look}>
             <div className={s.look__cards}>
+                {/* {
+                    louder ? <Spinner animation='grow' /> : looks.map((look) => (<SetLookItem key={look.id} look={look} />))
+                } */}
                 {
-                louder ? <Spinner animation='grow' /> : looks.map((look) => (<SetLookItem key={look.id} look={look} />))
+                    louder ? <Spinner animation='grow' /> : looks.map((card) => (<Product key={card.id} card={card} />))
                 }
             </div>
             <MyButton onClick={() => setModalActive(!modalActive)} >Leave feedback</MyButton>

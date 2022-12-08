@@ -14,7 +14,7 @@ const MainPage = () => {
     // }, [])
     return (
         <div>
-            {/* <Redirect to="/auth"/> */}
+            {/* <Redirect to="/auth" /> */}
             <Header />
             <Welcome />
             <Main />

@@ -1,0 +1,45 @@
+.order {
+    width: 100%;
+    min-height: calc(100vh - 213px);
+    background-image: url('../../image/orderImage.jpg');
+    background-repeat: no-repeat;
+    background-position-y: start;
+    background-position-x:55%;
+    background-size: cover;
+    color: #fff;
+    padding: 24px 45px 60px 45px;
+    text-align: center;
+
+    .order__title {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 38px;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .order__description {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        margin: 40px 0 20px 0;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .order__time {
+        display: flex;
+        justify-content: center;
+
+        .time{
+            margin: 0 10px;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .order {
+        padding: 20px 10px;
+    }
+}

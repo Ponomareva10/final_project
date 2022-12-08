@@ -4,6 +4,7 @@ import s from './style.module.scss';
 import UserReview from '../UserReview/UserReview';
 import Spinner from 'react-bootstrap/Spinner';
 import {GetReviewsFunc} from '../../store/slices/reviewsPost';
+import Product from '../Product/Product';
 
 const Reviews2 = () => {
   const dispatch = useDispatch();

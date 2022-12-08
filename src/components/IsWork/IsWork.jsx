@@ -26,24 +26,24 @@ const IsWork = () => {
                     <p className={s.item__text}>Оur products are categorized</p>
                     <div className={s.card__img2}>
                     <div className={s.img__wrapper}>
-                        <Link className={s.link} to='shoplist' >
+                        <Link className={s.link} to='shoplist/shoes' >
                         <div className={s.shoes} onClick={() => dispatch(GetShoesFunc())} >
                             <span>shoes</span>
                         </div>
                         </Link>
-                        <Link className={s.link}  to='shoplist' >
+                        <Link className={s.link}  to='shoplist/ouitermost' >
                         <div className={s.dress} onClick={() => dispatch(GetOutermostFunc())}>
                             <span>ouitermost</span>
                         </div>
                         </Link>
                     </div>
                     <div className={s.img__wrapper}>
-                        <Link className={s.link}  to='shoplist' >
+                        <Link className={s.link}  to='shoplist/pants' >
                         <div className={s.bag} onClick={() => dispatch(GetPantsFunc())} >
                             <span>pants</span>
                         </div>
                         </Link>
-                        <Link className={s.link}  to='shoplist' >
+                        <Link className={s.link}  to='shoplist/accesories' >
                         <div className={s.accesories} onClick={() => dispatch(GetAccesoriesFunc())}>
                             <span>accesories</span>
                         </div>

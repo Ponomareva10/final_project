@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { PostAddedToBasketFunc, DeleteBasketProductFunc } from '../../store/slices/basketProduct';
+import { PostAddedToBasketFunc, PatchBasketFunc } from '../../store/slices/basketProduct';
 import s from './style.module.scss';
 // import imageCard from '../../image/dress.jpg';
 import imageIcon from '../../image/basket.svg';
@@ -22,7 +22,7 @@ const Product = ({card}) => {
                     <div className={s.info__icon}>
                         {location.pathname !== '/basket' 
                         ? <img className={s.icon} src={imageIcon} alt="icon" onClick={() => dispatch(PostAddedToBasketFunc())} /> 
-                        : <img className={s.icon} src={imageDelete} alt="icon" on onClick={() => dispatch(DeleteBasketProductFunc())} />}
+                        : <img className={s.icon} src={imageDelete} alt="icon" on onClick={() => dispatch(PatchBasketFunc())} />}
                     </div>
                 </div>
             </div>

@@ -5,13 +5,16 @@ import s from './style.module.scss';
 import ImageComponents from '../imageComponents/imageComponents';
 import Spinner from 'react-bootstrap/Spinner';
 import { GetOutermostFunc, GetShoesFunc, GetPantsFunc, GetAccesoriesFunc, GetProductFunc } from '../../store/slices/Products';
+import { useLocation } from 'react-router-dom';
 
 const ShopList = () => {
     const dispatch = useDispatch();
+    const { pathname } = useLocation();
     const { cards, louder } = useSelector((state) => state.ProductSlice);
 
     useEffect(() => {
-        dispatch(GetProductFunc());
+        if (pathname === '/shoplist')
+            dispatch(GetProductFunc());
     }, []);
     
     return (

@@ -5,8 +5,8 @@ import MyButton from '../../UI/button/MyButton';
 const QuestionGender = ({ setState, state }) => {
     return (
         <div className={s.styling__btn}>
-            <MyButton onClick={() => setState({...state, questionGender: 'Male'})}  >MALE</MyButton>
-            <MyButton onClick={() => setState({...state, questionGender: 'Female'})}  >FEMALE</MyButton>
+            <MyButton onClick={() => setState({...state, gender: 'man'})}  >MALE</MyButton>
+            <MyButton onClick={() => setState({...state, gender: 'woman'})}  >FEMALE</MyButton>
         </div>
     );
 };
