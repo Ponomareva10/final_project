@@ -11,7 +11,7 @@ export const GetReviewsFunc = createAsyncThunk(
     'reviews/GetReviewsFunc',
     async(_, {dispatch}) => {
         const res = await axios.get(
-            'https://looks-project-1.herokuapp.com/api_v1/users/reviews/', {
+            'https://looks-project-1.herokuapp.com/api_v1/users/reviews', {
             headers: {
                 Authorization: `Bearer ${JSON.parse(localStorage.getItem('access'))}`
             }
@@ -24,11 +24,11 @@ export const GetReviewsFunc = createAsyncThunk(
 export const PostAddedReviewsFunc = createAsyncThunk(
     'reviews/PostAddedReviewsFunc',
     async(obj, { dispatch }) => {
-        const {data} = await axios.post(
+        const res = await axios.post(
             'https://looks-project-1.herokuapp.com/api_v1/users/reviews/', 
             obj);
-        // const { data } = res; 
-        dispatch(postAddedReviews(data));
+        const { data } = res; 
+        dispatch(postAddedReviews(res));
         localStorage.setItem("access", JSON.stringify(data.access));
         localStorage.setItem("refresh", JSON.stringify(data.refresh));
     }

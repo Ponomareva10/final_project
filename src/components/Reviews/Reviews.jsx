@@ -15,6 +15,10 @@ const Reviews = () => {
   const {reviews, louder, error} = useSelector((state) => state.reviewsSlice);
   const [slidersPreview , setSlidersPreview ] = useState(4);
 
+  const errorMessege = () => {
+    if (error.detail) return  error.detail
+  }
+
   const matchesDesktop = useMediaQuery('(min-width:1400px)');
   const matches = useMediaQuery('(min-width:1020px)');
   const matchesTable = useMediaQuery('(min-width:750px)');
@@ -41,9 +45,7 @@ const Reviews = () => {
   return (
     <section className={s.wrapper__reviews}>
       <div className={s.reviews__title}>Reviews</div>
-      {
-        error && <h3 style={{color: 'red'}}>You can read the reviews only after authorization</h3>
-      }
+      <h3 style={{color: 'red'}} >{errorMessege()}</h3>
       <div className={s.wrapper__cards}>
         <Swiper 
             slidesPerView={slidersPreview} 
