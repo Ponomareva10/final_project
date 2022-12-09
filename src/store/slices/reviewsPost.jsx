@@ -12,7 +12,7 @@ export const GetReviewsFunc = createAsyncThunk(
     async(_, {dispatch, rejectWithValue}) => {
         try {
             const res = await axios.get(
-                'https://looks-project-1.herokuapp.com/api_v1/users/reviews', {
+                'https://looks-project-1.herokuapp.com/api_v1/users/reviews/', {
                 headers: {
                     Authorization: `Bearer ${JSON.parse(localStorage.getItem('access'))}`
                 }
