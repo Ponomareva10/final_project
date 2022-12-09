@@ -5,10 +5,11 @@ import ListExample from '../Navigation/Navigation';
 import MyButton from '../../UI/button/MyButton';
 import s from './style.module.scss';
 import CastomNav from '../CastomNav/CastomNav';
-import { isAuth } from '../../pages/MainPage';
 
 const Header = () => {
+
     const location = useLocation();
+
     return (
         <header className={s.header}>
             <h2 className={s.header__title}>
@@ -17,7 +18,6 @@ const Header = () => {
                 </Link>
             Your Look
             </h2>
-
             <div className={s.btn}>
                 { location.pathname === '/' ||  location.pathname === '/reviews' ? 
                 <Link to='/question'>
@@ -28,6 +28,17 @@ const Header = () => {
             <div className={s.header__link}>
                 <ListExample />
                 <CastomNav />
+            </div>
+            <div className={s.header__link}> 
+                <Link to='/registration'> 
+                    <button className={s.logaut} 
+                        onClick={() => { 
+                        localStorage.removeItem('access') 
+                        localStorage.removeItem('refresh') 
+                        }} 
+                    > logaut 
+                    </button>
+                </Link>
             </div>
         </header>
     );

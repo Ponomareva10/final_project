@@ -18,7 +18,7 @@ import OrderPage from "./pages/OrderPage";
 
 function App() {
 
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("access");
 
   return (
     <div className="App">

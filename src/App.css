@@ -21,7 +21,7 @@
 }
 
 .myBtn:focus {
-  background: teal;
+  box-shadow: 2px 2px teal;
 }
 
 .burger__icon {

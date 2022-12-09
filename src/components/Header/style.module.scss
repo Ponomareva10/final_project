@@ -20,6 +20,21 @@
             margin-right: 32px;
         }
     }
+
+    .header__link {
+        .logaut{
+            width: 75px;
+            height: 30px;
+            border-radius: 6px;
+            border: none;
+            background-color: coral;
+            color: #fff;
+        }
+
+        .logaut:active {
+            box-shadow: 2px 2px teal;
+        }
+    }
 }
 
 @media (max-width: 750px) {
