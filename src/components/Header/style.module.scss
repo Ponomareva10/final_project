@@ -17,18 +17,23 @@
             width: 26px;
             height: 24px;
             object-fit: contain;
-            margin-right: 32px;
+            margin-right: 28px;
         }
     }
 
-    .header__link {
+    .header__btn {
         .logaut{
-            width: 75px;
+            width: 65px;
             height: 30px;
             border-radius: 6px;
             border: none;
-            background-color: coral;
+            background: linear-gradient(35deg, rgba(252,252,251,0.8690826672465861) 0%, rgb(244, 119, 52) 100%);
             color: #fff;
+            margin: 3px;
+        }
+
+        .logaut:hover {
+            background: linear-gradient(35deg, rgba(220, 220, 187, 0.869) 0%, rgb(204, 74, 5) 100%);
         }
 
         .logaut:active {
@@ -47,9 +52,10 @@
                 margin-right: 12px;
             }
         }
-
-        .btn {
-            display: none;
+        
+        .header__btn {
+            width: 65px;
+            height: 100%;
         }
     }
 }

@@ -17,7 +17,6 @@ import PrivatePage from "./components/Private/Private";
 import OrderPage from "./pages/OrderPage";
 
 function App() {
-
   const token = localStorage.getItem("access");
 
   return (
@@ -26,7 +25,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/registration" element={<RegisPage />} />
-        <Route path="/point_order" element={<OrderPage/>} />
+        <Route path="/point_order" element={<OrderPage />} />
         <Route
           path="/reviews"
           element={

@@ -1,19 +1,29 @@
-import React, { useState } from 'react';
-import MyButton from '../../UI/button/MyButton';
-import ImageItem from '../ImageItem/ImageItem';
-import ModalReadyLook from '../../components/Modal/ModalReadyLook'
-import s from './style.module.scss';
+import React, { useState } from "react";
+import MyButton from "../../UI/button/MyButton";
+import ImageItem from "../ImageItem/ImageItem";
+import ModalReadyLook from "../../components/Modal/ModalReadyLook";
+import s from "./style.module.scss";
 
-const SetLookItem = ({look}) => {
-    const [modalLookActive, setModalLookActive] = useState(false);
-    console.log(look)
-    return (
-        <div className={s.setLook}> 
-            <ImageItem item={look} />
-            <MyButton onClick={() => setModalLookActive(!modalLookActive)} >See more</MyButton>
-            {modalLookActive && <ModalReadyLook item={look} setModalLookActive={setModalLookActive}/>}
-        </div>
-    );
+const SetLookItem = ({ looksItem }) => {
+  const [modalLookActive, setModalLookActive] = useState(false);
+
+  return (
+    <div className={s.setLook}>
+      {looksItem.map((card) => (
+        <ImageItem key={card.id} card={card} />
+      ))}
+      <MyButton onClick={() => setModalLookActive(!modalLookActive)}>
+        See more
+      </MyButton>
+      {modalLookActive && (
+        <ModalReadyLook
+          key={looksItem.id}
+          looksItem={looksItem}
+          setModalLookActive={setModalLookActive}
+        />
+      )}
+    </div>
+  );
 };
 
 export default SetLookItem;

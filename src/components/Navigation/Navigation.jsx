@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
-import burger from '../../image/burger.svg';
-import Nav from 'react-bootstrap/Nav';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-
+import React, { useState } from "react";
+import burger from "../../image/burger.svg";
+import Nav from "react-bootstrap/Nav";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 function ListExample() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -20,12 +19,12 @@ function ListExample() {
     <div>
       <Button
         id="demo-positioned-button"
-        aria-controls={open ? 'demo-positioned-menu' : undefined}
+        aria-controls={open ? "demo-positioned-menu" : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
+        aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <img src={burger} className='burger__icon' alt="burger_icon" />
+        <img src={burger} className="burger__icon" alt="burger_icon" />
       </Button>
       <Menu
         id="demo-positioned-menu"
@@ -34,12 +33,12 @@ function ListExample() {
         open={open}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
+          vertical: "top",
+          horizontal: "left",
         }}
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
+          vertical: "top",
+          horizontal: "left",
         }}
       >
         <MenuItem onClick={handleClose}>

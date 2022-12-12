@@ -6,9 +6,9 @@
 }
 
 .myBtn {
-  width: 200px;
+  width: 210px;
   height: 50px;
-  background: #82F7E2;
+  background: linear-gradient(35deg, rgb(229, 229, 230), rgb(39, 42, 37));
   border-radius: 4px;
   border: none;
   font-weight: 700;
@@ -16,12 +16,16 @@
   line-height: 16px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: #3A3A3A;
+  color: #FFFFFF;
   cursor: pointer;
 }
 
+.myBtn:hover {
+  background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(217,209,207) 100%) ;
+}
+
 .myBtn:focus {
-  box-shadow: 2px 2px teal;
+  box-shadow: 3px 4px rgb(56, 79, 79);
 }
 
 .burger__icon {
@@ -70,6 +74,7 @@
   height: 100vh;
   background-color: rgba(0,0,0,0.5);
   position: fixed;
+  z-index: 1000000;
   left: 50%;
   top: 50%;
   display: flex;
@@ -77,7 +82,6 @@
   justify-content: center;
   transition: 0.5s;
   opacity: 1;
-  pointer-events: all;
   transform: translate(-50%, -50%);
 }
 
@@ -96,6 +100,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  z-index: 99999999;
+  overflow: auto;
 }
 
 .modal_contentLook {
@@ -150,6 +156,7 @@
   color:#fff;
   border: none;
   border-radius: 4px;
+  margin-top: 15px;
 }
 
 .myCheced {

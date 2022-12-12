@@ -2,22 +2,22 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-  looks: [],
+  looks: {},
   louder: false,
+};
+
+export const config = {
+  headers: {
+    Authorization: `Bearer ${JSON.parse(localStorage.getItem("access"))}`,
+  },
 };
 
 export const GetLookFunc = createAsyncThunk(
   "look/GetLookFunc",
-  async (obj, { rejectWithValue, dispatch }) => {
-    const token = JSON.parse(localStorage.getItem("access"));
-    console.log(token);
+  async (obj, { dispatch }) => {
     const res = await axios.get(
       `https://looks-project-1.herokuapp.com/api_v1/cl_filter/?gender=${obj.gender}&style=${obj.style}&season=${obj.season}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
+      config
     );
     dispatch(getLook(res.data));
   }
@@ -42,5 +42,5 @@ const lookSlice = createSlice({
   },
 });
 
-export const { postLook, getLook } = lookSlice.actions;
+export const { getLook, getAccesSet } = lookSlice.actions;
 export default lookSlice.reducer;

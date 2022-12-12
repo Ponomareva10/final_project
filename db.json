@@ -1,0 +1,16 @@
+{
+  "basket": [
+    {
+      "id": 35,
+      "picture": "https://res.cloudinary.com/honhn8n1n/image/upload/v1/media/%D0%BA%D0%B5%D0%B6%D0%BB_%D1%88%D0%BE%D1%80%D1%82%D1%8B_%D0%BB%D0%B5%D1%82%D0%BE_2_gmgzuf",
+      "title": "Кежл шорты женск",
+      "description": "Шорты",
+      "price": "1200.00",
+      "style": "casual",
+      "gender": "woman",
+      "season": "summer",
+      "category": "legs",
+      "tag": "cl"
+    }
+  ]
+}

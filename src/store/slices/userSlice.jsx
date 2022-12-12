@@ -18,13 +18,13 @@ export const PostRegisterFunc = createAsyncThunk(
       const res = await axios.post(
         `https://looks-project-1.herokuapp.com/api_v1/users/register/`,
         obj
-        );
+      );
       const { data } = res;
       dispatch(setUser(res));
       localStorage.setItem("access", JSON.stringify(data.access));
       localStorage.setItem("refresh", JSON.stringify(data.refresh));
     } catch (e) {
-      return rejectWithValue( e.response.data )
+      return rejectWithValue(e.response.data);
     }
   }
 );
@@ -40,14 +40,14 @@ const userSlice = createSlice({
     },
     removeUser(state) {
       state.registr = {};
-    }
+    },
   },
   extraReducers: {
     [PostRegisterFunc.rejected]: (state, action) => {
       state.error = action.payload;
       state.isRegistrated = false;
-    }
-  }
+    },
+  },
 });
 
 export const { setUser, removeUser, errorMessage } = userSlice.actions;

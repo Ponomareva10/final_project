@@ -4,17 +4,19 @@ import { useDispatch } from "react-redux";
 import { PostAddedReviewsFunc } from "../../store/slices/reviewsPost";
 
 const Modal = ({ setModalActive }) => {
-
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [cardInfo, setCardInfo] = useState({
-    feedback: "",
+    comment: "",
   });
 
   return (
-    <div  className="modal_active" onClick={() => {
-      setModalActive(false);
-    }}>
+    <div
+      className="modal_active"
+      onClick={() => {
+        setModalActive(false);
+      }}
+    >
       <div>
         <div className="modal_content" onClick={(e) => e.stopPropagation()}>
           <p
@@ -23,21 +25,23 @@ const Modal = ({ setModalActive }) => {
               setModalActive(false);
             }}
           >
-            <img className="icon__close" src={close} alt='close' />
+            <img className="icon__close" src={close} alt="close" />
           </p>
           <h2 className="title_modal">Please write a feedback</h2>
           <textarea
             type="text"
             className="textarea"
-            onChange={(e) => setCardInfo({ ...cardInfo, feedback: e.target.value })}
+            onChange={(e) =>
+              setCardInfo({ ...cardInfo, comment: e.target.value })
+            }
           ></textarea>
           <button
             className="btn_modal"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(PostAddedReviewsFunc(cardInfo));
-                setModalActive(false);
-              }}
+            onClick={(e) => {
+              e.preventDefault();
+              dispatch(PostAddedReviewsFunc(cardInfo));
+              setModalActive(false);
+            }}
           >
             Post a feedback
           </button>
