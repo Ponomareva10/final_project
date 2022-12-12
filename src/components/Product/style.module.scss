@@ -11,7 +11,7 @@
         width: 100%;
         height: 180px;
 
-        .image {
+        .img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -40,7 +40,7 @@
 
         .info__description {
             max-width: 100%;
-            height: 55px;
+            height: 32px;
             font-weight: 500;
             font-size: 14px;
             line-height: 16px;
@@ -48,11 +48,21 @@
             color:  #171717;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin-bottom: 12px;
+            margin-bottom: 6px;
+        }
+        button {
+            width: 210px;
+            height: 20px;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.015em;
+            border: none;
+            border-radius: 6px;
+            margin: 5px;
         }
 
-        .info__description:active {
-            height: max-content;
+        button:active {
+            box-shadow: 2px 2px #171717;
         }
 
         .info__price {

@@ -17,15 +17,15 @@ import PrivatePage from "./components/Private/Private";
 import OrderPage from "./pages/OrderPage";
 
 function App() {
-  const token = true;
-  // const token = localStorage.getItem("token");
+  const token = localStorage.getItem("access");
+
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/registration" element={<RegisPage />} />
-        <Route path="/point_order" element={<OrderPage/>} />
+        <Route path="/point_order" element={<OrderPage />} />
         <Route
           path="/reviews"
           element={
@@ -74,14 +74,6 @@ function App() {
             </PrivatePage>
           }
         />
-                {/* <Route
-          path="/point_order"
-          element={
-            <PrivatePage isRequired={token} redirectLink="/auth">
-              <OrderPage />
-            </PrivatePage>
-          }
-        /> */}
       </Routes>
     </div>
   );
