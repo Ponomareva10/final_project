@@ -13,7 +13,7 @@ const initialState = {
 export const GetBasketFunc = createAsyncThunk(
   "basketProducts/GetBasketFunc",
   async (_, { dispatch }) => {
-    const res = await axios.get("http://localhost:3500/basket");
+    const res = await axios.get("http://localhost:3500/basket/");
     dispatch(getBasketProducts(res.data));
   }
 );
@@ -21,26 +21,15 @@ export const GetBasketFunc = createAsyncThunk(
 export const PostAddedToBasketFunc = createAsyncThunk(
   "basketProducts/PostAddedToBasketFunc",
   async (obj, { dispatch }) => {
-    const res = await axios.post(`http://localhost:3500/basket`, obj);
+    const res = await axios.post(`http://localhost:3500/basket/`, obj);
     dispatch(postAddedToBasket(res.data));
-  }
-);
-
-export const PatchBasketFunc = createAsyncThunk(
-  "basketProducts/PatchBasketFunc",
-  async (payload, { dispatch }) => {
-    const res = await axios.patch(
-      `http://localhost:3500/basket${payload.id}`,
-      payload.obj
-    );
-    dispatch(pathBasketProduct(res.data));
   }
 );
 
 export const DeleteBasketProductFunc = createAsyncThunk(
   "basketProducts/DeleteBasketProductFunc",
   async (id, { dispatch }) => {
-    await axios.delete(`http://localhost:3500/basket${id}`);
+    await axios.delete(`http://localhost:3500/basket/${id}/`);
     dispatch(deleteBasketProduct(id));
   }
 );
@@ -131,7 +120,7 @@ const basketSlice = createSlice({
       );
     },
     deleteBasketProduct: (state, action) => {
-      state.basket.filter((item) => item.id !== action.payload);
+      state.basket.filter((item) => item.state.basket !== action.payload);
     },
     totalSumPrice: (state, action) => {
       state.total = action.payload;

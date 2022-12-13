@@ -1,0 +1,16 @@
+{
+  "basket": [
+    {
+      "id": 31,
+      "picture": "https://res.cloudinary.com/honhn8n1n/image/upload/v1/media/%D0%B6%D0%B5%D0%BD%D1%81%D0%BA_%D0%BA%D1%80%D0%BE%D1%81%D1%81%D0%BE%D0%B2%D0%BA%D0%B82_rj6pj4",
+      "title": "Женск крссовки 2",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+      "price": "3500.00",
+      "style": "sport",
+      "gender": "woman",
+      "season": "summer",
+      "category": "shoes",
+      "tag": "cl"
+    }
+  ]
+}

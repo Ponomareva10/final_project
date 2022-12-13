@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import {
   PostAddedToBasketFunc,
-  PatchBasketFunc,
+  DeleteBasketProductFunc,
+  GetBasketFunc,
 } from "../../store/slices/basketProduct";
 import s from "./style.module.scss";
 import ModalProduct from "../../components/Modal/ModalProduct";
@@ -11,7 +12,7 @@ import ModalProduct from "../../components/Modal/ModalProduct";
 import imageIcon from "../../image/basket.svg";
 import imageDelete from "../../image/delete.svg";
 
-const Product = ({ card }) => {
+const Product = ({card }) => {
   const location = useLocation();
   const dispatch = useDispatch();
   const [modActive, setModActive] = useState(false);
@@ -47,7 +48,7 @@ const Product = ({ card }) => {
                 src={imageDelete}
                 alt="icon"
                 on
-                onClick={() => dispatch(PatchBasketFunc(card.id))}
+                onClick={() => dispatch(DeleteBasketProductFunc(card.id))}
               />
             )}
           </div>
