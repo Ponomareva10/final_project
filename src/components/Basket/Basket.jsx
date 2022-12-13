@@ -31,12 +31,6 @@ const Basket = () => {
 
   return (
     <div className={s.basket}>
-      <button
-        className={s.btn}
-        onClick={() => dispatch(DeleteBasketProductFunc())}
-      >
-        Clear basket
-      </button>
       <div className={s.basket__wrapper}>
         {louder ? (
           <Spinner animation="grow" />
